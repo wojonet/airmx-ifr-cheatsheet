@@ -1,0 +1,3 @@
+- Spell check
+- Section Link
+- Search
