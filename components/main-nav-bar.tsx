@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { IconChevronDown, IconChevronRight, IconPoint } from '@tabler/icons-react'
 import { useMantineTheme } from '@mantine/core'
+import { useCurrentSection } from '@/providers/CurrentSection'
 
 const menuItems = [
   {
@@ -10,6 +11,10 @@ const menuItems = [
       {
         title: 'Certification Experience Requirements',
         key: 'certification-experience-requirements',
+      },
+      {
+        title: 'Certification Experience Requirements 2',
+        key: 'certification-experience-requirements2',
       },
     ],
   },
@@ -45,9 +50,12 @@ const NavItem = ({
 }
 
 const MainNavBar = () => {
-  const [activeItem, setActiveItem] = useState<string | null>(null)
+  //const [activeItem, setActiveItem] = useState<string | null>(null)
   const [expandedItem, setExpandedItem] = useState<string | null>('preflight-preperation')
   const { colorScheme } = useMantineTheme()
+  const { currentSection } = useCurrentSection()
+  const activeItem = currentSection
+  console.log(currentSection)
 
   return (
     <ul className="main-nav-bar">
@@ -71,10 +79,10 @@ const MainNavBar = () => {
                   <a
                     href={`#${child.key}`}
                     className={`block rounded-md ${activeItem === child.key ? `${colorScheme}-active` : ''}`}
-                    onClick={e => {
-                      e.stopPropagation()
-                      setActiveItem(child.key)
-                    }}
+                    // onClick={e => {
+                    //   e.stopPropagation()
+                    //   setActiveItem(child.key)
+                    // }}
                   >
                     {child.title}
                   </a>

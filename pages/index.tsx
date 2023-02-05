@@ -4,6 +4,7 @@ import { AppShell, Navbar, Text, useMantineColorScheme } from '@mantine/core'
 import TitlePage from '@/components/title-page'
 import CertificationExperinceRequirements from '@/components/preflight-preperation/certification-experience-requirements'
 import MainNavBar from '@/components/main-nav-bar'
+import { CurrentSectionProvider } from '@/providers/CurrentSection'
 //import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,23 +20,25 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppShell
-        padding="md"
-        navbar={
-          <Navbar p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
-            <MainNavBar />
-          </Navbar>
-        }
-      >
-        <article className={`prose prose-slate ${colorScheme === `dark` ? `dark:prose-invert` : ``}`}>
-          <TitlePage />
-          <section id="bodymatter">
-            <section id="preflight-preperation">
-              <CertificationExperinceRequirements />
+      <CurrentSectionProvider>
+        <AppShell
+          padding="md"
+          navbar={
+            <Navbar p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
+              <MainNavBar />
+            </Navbar>
+          }
+        >
+          <article className={`prose prose-slate ${colorScheme === `dark` ? `dark:prose-invert` : ``}`}>
+            <TitlePage />
+            <section id="bodymatter">
+              <section id="preflight-preperation">
+                <CertificationExperinceRequirements />
+              </section>
             </section>
-          </section>
-        </article>
-      </AppShell>
+          </article>
+        </AppShell>
+      </CurrentSectionProvider>
     </>
   )
 }
