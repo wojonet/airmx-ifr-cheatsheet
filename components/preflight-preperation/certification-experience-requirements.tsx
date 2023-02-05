@@ -5,7 +5,7 @@ const CertificationExperienceRequirements = () => {
   return (
     <section id="certification-experience-requirements">
       <h2>Certification Experience Requirements</h2>
-      <p>
+      <div>
         To be eligible for an instrument rating, you must have:
         <ul>
           <li>50 hours of PIC cross country time with at least 10 of those hours in airplanes.</li>
@@ -28,7 +28,7 @@ const CertificationExperienceRequirements = () => {
         </Alert>
         You may also use an aviation training device, up to 10 hours in a basic aviation training device or 20 hours in
         an advanced aviation training device.
-      </p>
+      </div>
     </section>
   )
 }
