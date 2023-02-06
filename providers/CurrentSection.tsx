@@ -30,7 +30,6 @@ export const CurrentSectionProvider = ({ children }: { children: React.ReactNode
         } else {
           viewableSections = viewableSections.filter(section => section !== secId)
         }
-        console.log(viewableSections)
       })
       setCurrentSection({ currentSection: viewableSections.length > 0 ? viewableSections[0] : null })
     })

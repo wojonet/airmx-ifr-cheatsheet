@@ -7,6 +7,7 @@ import MainNavBar from '@/components/main-nav-bar'
 import { CurrentSectionProvider } from '@/providers/CurrentSection'
 import SectionRefWrapper from '@/util/section-ref-wrapper'
 import GeneralPilotRequirements from '@/components/preflight-preperation/general-pilot-requirements'
+import RecencyOfExperience from '@/components/preflight-preperation/recency-of-experience'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -39,6 +40,9 @@ export default function Home() {
                 </SectionRefWrapper>
                 <SectionRefWrapper sectionId="certification-experience-requirements">
                   <CertificationExperinceRequirements />
+                </SectionRefWrapper>
+                <SectionRefWrapper sectionId="receny-of-experience">
+                  <RecencyOfExperience />
                 </SectionRefWrapper>
               </section>
             </section>

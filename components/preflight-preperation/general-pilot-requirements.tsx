@@ -3,7 +3,6 @@ const GeneralPilotRequirements = () => {
     <>
       <h2>General Pilot Requirements</h2>
       <cite>
-        {' '}
         <a
           href="https://www.ecfr.gov/current/title-14/chapter-I/subchapter-D/part-61/subpart-B/section-61.65"
           target="_blank"

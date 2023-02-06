@@ -15,6 +15,10 @@ export const MenuItems = [
         title: 'Certification Experience Requirements',
         key: 'certification-experience-requirements',
       },
+      {
+        title: 'Receny of Experience',
+        key: 'receny-of-experience',
+      },
     ],
   },
   {
