@@ -22,6 +22,13 @@ export default function App({ Component, pageProps }: AppProps) {
         withNormalizeCSS
         theme={{
           colorScheme,
+          globalStyles(theme) {
+            return {
+              '.active': {
+                backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[0],
+              },
+            }
+          },
         }}
       >
         <Component {...pageProps} />

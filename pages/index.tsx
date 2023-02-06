@@ -5,6 +5,7 @@ import TitlePage from '@/components/title-page'
 import CertificationExperinceRequirements from '@/components/preflight-preperation/certification-experience-requirements'
 import MainNavBar from '@/components/main-nav-bar'
 import { CurrentSectionProvider } from '@/providers/CurrentSection'
+import SectionRefWrapper from '@/util/section-ref-wrapper'
 //import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -33,7 +34,9 @@ export default function Home() {
             <TitlePage />
             <section id="bodymatter">
               <section id="preflight-preperation">
-                <CertificationExperinceRequirements />
+                <SectionRefWrapper>
+                  <CertificationExperinceRequirements sectionId="certification-experience-requirements" />
+                </SectionRefWrapper>
               </section>
             </section>
           </article>

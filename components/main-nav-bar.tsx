@@ -12,10 +12,6 @@ const menuItems = [
         title: 'Certification Experience Requirements',
         key: 'certification-experience-requirements',
       },
-      {
-        title: 'Certification Experience Requirements 2',
-        key: 'certification-experience-requirements2',
-      },
     ],
   },
   {
@@ -50,12 +46,9 @@ const NavItem = ({
 }
 
 const MainNavBar = () => {
-  //const [activeItem, setActiveItem] = useState<string | null>(null)
   const [expandedItem, setExpandedItem] = useState<string | null>('preflight-preperation')
-  const { colorScheme } = useMantineTheme()
-  const { currentSection } = useCurrentSection()
+  const { currentSection, setCurrentSection } = useCurrentSection()
   const activeItem = currentSection
-  console.log(currentSection)
 
   return (
     <ul className="main-nav-bar">
@@ -78,11 +71,12 @@ const MainNavBar = () => {
                 <NavItem key={child.key} isChildNode={true}>
                   <a
                     href={`#${child.key}`}
-                    className={`block rounded-md ${activeItem === child.key ? `${colorScheme}-active` : ''}`}
-                    // onClick={e => {
-                    //   e.stopPropagation()
-                    //   setActiveItem(child.key)
-                    // }}
+                    className={`block pl-4 rounded-sm ${activeItem === child.key ? `active` : ''}`}
+                    onClick={e => {
+                      e.stopPropagation()
+                      setCurrentSection(child.key)
+                      //setActiveItem(child.key)
+                    }}
                   >
                     {child.title}
                   </a>
