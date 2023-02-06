@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { IconChevronDown, IconChevronRight, IconPoint } from '@tabler/icons-react'
-import { useMantineTheme } from '@mantine/core'
 import { useCurrentSection } from '@/providers/CurrentSection'
 
-const menuItems = [
+export const MenuItems = [
   {
     title: 'Preflight Preperation',
     key: 'preflight-preperation',
     children: [
+      {
+        title: 'General Pilot Requirements',
+        key: 'general-pilot-requirements',
+      },
       {
         title: 'Certification Experience Requirements',
         key: 'certification-experience-requirements',
@@ -52,7 +55,7 @@ const MainNavBar = () => {
 
   return (
     <ul className="main-nav-bar">
-      {menuItems.map(item => (
+      {MenuItems.map(item => (
         <NavItem
           key={item.key}
           onClick={() => {
@@ -71,7 +74,7 @@ const MainNavBar = () => {
                 <NavItem key={child.key} isChildNode={true}>
                   <a
                     href={`#${child.key}`}
-                    className={`block pl-4 rounded-sm ${activeItem === child.key ? `active` : ''}`}
+                    className={`block pl-4 pr-2 rounded-sm ${activeItem === child.key ? `active` : ''}`}
                     onClick={e => {
                       e.stopPropagation()
                       setCurrentSection(child.key)

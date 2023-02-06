@@ -24,11 +24,13 @@ export const CurrentSectionProvider = ({ children }: { children: React.ReactNode
     let viewableSections: string[] = []
     const intObs = new IntersectionObserver(events => {
       events.forEach(event => {
+        const secId = event.target.id
         if (event.isIntersecting) {
-          viewableSections = [event.target.id, ...viewableSections]
+          viewableSections = [...viewableSections, secId]
         } else {
-          viewableSections = viewableSections.filter(section => section !== event.target.id)
+          viewableSections = viewableSections.filter(section => section !== secId)
         }
+        console.log(viewableSections)
       })
       setCurrentSection({ currentSection: viewableSections.length > 0 ? viewableSections[0] : null })
     })

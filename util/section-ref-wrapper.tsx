@@ -4,10 +4,11 @@ import { useEffect, useRef } from 'react'
 
 export interface SectionRefWrapperProps {
   children: React.ReactElement
+  sectionId: string
   props?: React.HTMLAttributes<HTMLDivElement>
 }
 
-const SectionRefWrapper = ({ children, ...props }: SectionRefWrapperProps) => {
+const SectionRefWrapper = ({ children, sectionId, ...props }: SectionRefWrapperProps) => {
   const { addViewableSection } = useCurrentSection()
   const ref = useRef<HTMLDivElement>(null)
 
@@ -17,7 +18,11 @@ const SectionRefWrapper = ({ children, ...props }: SectionRefWrapperProps) => {
     }
   }, [ref, addViewableSection])
 
-  return React.cloneElement(children, { ref, ...props })
+  return (
+    <section ref={ref} id={sectionId} {...props}>
+      {children}
+    </section>
+  )
 }
 
 export default SectionRefWrapper

@@ -6,7 +6,7 @@ import CertificationExperinceRequirements from '@/components/preflight-preperati
 import MainNavBar from '@/components/main-nav-bar'
 import { CurrentSectionProvider } from '@/providers/CurrentSection'
 import SectionRefWrapper from '@/util/section-ref-wrapper'
-//import styles from '@/styles/Home.module.css'
+import GeneralPilotRequirements from '@/components/preflight-preperation/general-pilot-requirements'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +25,7 @@ export default function Home() {
         <AppShell
           padding="md"
           navbar={
-            <Navbar p="md" hiddenBreakpoint="sm" width={{ sm: 200, lg: 300 }}>
+            <Navbar p="md" hiddenBreakpoint="sm" width={{ sm: 300, lg: 400 }}>
               <MainNavBar />
             </Navbar>
           }
@@ -34,8 +34,11 @@ export default function Home() {
             <TitlePage />
             <section id="bodymatter">
               <section id="preflight-preperation">
-                <SectionRefWrapper>
-                  <CertificationExperinceRequirements sectionId="certification-experience-requirements" />
+                <SectionRefWrapper sectionId="general-pilot-requirements">
+                  <GeneralPilotRequirements />
+                </SectionRefWrapper>
+                <SectionRefWrapper sectionId="certification-experience-requirements">
+                  <CertificationExperinceRequirements />
                 </SectionRefWrapper>
               </section>
             </section>
