@@ -93,6 +93,16 @@ const MainNavBar = () => {
           )}
         </NavItem>
       ))}
+      <NavItem>
+        <ul>
+          Appendix
+          <NavItem isChildNode={true}>
+            <a href="#night-definitions" className="block pl-4 pr-2 rounded-sm">
+              Night
+            </a>
+          </NavItem>
+        </ul>
+      </NavItem>
     </ul>
   )
 }

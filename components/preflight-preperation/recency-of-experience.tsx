@@ -1,5 +1,6 @@
 import { Alert } from '@mantine/core'
 import { IconAlertCircle } from '@tabler/icons-react'
+import Image from 'next/image'
 import Todo from '../todo'
 
 const RecencyOfExperience = () => {
@@ -55,8 +56,9 @@ const RecencyOfExperience = () => {
         <p>
           <strong>Night: </strong>In order to carry passengers on a night flight, a pilot must have completed 3 takeoffs
           and landings (to a full stop) within the previous 90 days. These takeoffs and landings must take place between
-          1 hour after after sunset and 1 hour before sunrise.{' '}
+          1 hour after sunset and 1 hour before sunrise.
           <Todo>TODO: Link to how to log night flight and a diagram of night stuff.</Todo>
+          <Image src="/images/night.png" alt="Night Flight" width={800} height={298} />
         </p>
         <Alert color="yellow" icon={<IconAlertCircle size={16} />} className="my-4">
           A flight review may be completed in a simulator approved for takeoffs and landings given it is part of an
