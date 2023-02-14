@@ -93,12 +93,20 @@ const MainNavBar = () => {
           )}
         </NavItem>
       ))}
-      <NavItem>
+      <NavItem isActive={true}>
         <ul>
           Appendix
           <NavItem isChildNode={true}>
-            <a href="#night-definitions" className="block pl-4 pr-2 rounded-sm">
-              Night
+            <a
+              href="#night-definitions"
+              className={`block pl-4 pr-2 rounded-sm ${activeItem === 'night-definitions' ? `active` : ''}`}
+              onClick={e => {
+                e.stopPropagation()
+                setCurrentSection('night-definitions')
+                //setActiveItem(child.key)
+              }}
+            >
+              Night Definitions
             </a>
           </NavItem>
         </ul>

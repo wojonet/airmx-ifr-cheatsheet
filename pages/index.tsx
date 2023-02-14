@@ -8,6 +8,7 @@ import { CurrentSectionProvider } from '@/providers/CurrentSection'
 import SectionRefWrapper from '@/util/section-ref-wrapper'
 import GeneralPilotRequirements from '@/components/preflight-preperation/general-pilot-requirements'
 import RecencyOfExperience from '@/components/preflight-preperation/recency-of-experience'
+import NightDefinitions from '@/components/appendix/night-definitions'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,6 +44,10 @@ export default function Home() {
                 </SectionRefWrapper>
                 <SectionRefWrapper sectionId="receny-of-experience">
                   <RecencyOfExperience />
+                </SectionRefWrapper>
+                <h1>Appendix</h1>
+                <SectionRefWrapper sectionId="night-definitions">
+                  <NightDefinitions />
                 </SectionRefWrapper>
               </section>
             </section>
