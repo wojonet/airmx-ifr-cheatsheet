@@ -80,8 +80,11 @@ const RecencyOfExperience = () => {
             <li>Intercepting and tracking courses using a navigational system</li>
           </ul>
           <Alert color="yellow" icon={<IconAlertCircle size={16} />} className="my-4">
-            These requirements may be completed in an approved full flight simulator, flight training device, or
-            aviation training device provided the device represents the category of aircraft the pilot will use.
+            <p>
+              These requirements may be completed in an approved full flight simulator, flight training device, or
+              aviation training device provided the device represents the category of aircraft the pilot will use.
+            </p>
+            <p>You must log information on the training device, time spent and content.</p>
           </Alert>
           <h4>6 month grace period</h4>
           <p>
